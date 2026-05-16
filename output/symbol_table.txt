@@ -4,7 +4,7 @@ SYMBOL               | ROLE       | FIRST LINE  | FIRST COL  | REFERENCES
 -------------------------------------------------------------------------
 calculate_statistics | function   | L6          | C10        | L33:C9
 spacing_test         | function   | L6          | C10        | —
-string_and_symbols   | function   | L6          | C10        | —
+string_and_symbols   | function   | L6          | C10        | L28:C1
 faulty_code_test     | function   | L6          | C10        | —
 data_array           | variable   | L6          | C31        | L10:C18
 threshold            | variable   | L6          | C43        | L11:C21
@@ -13,10 +13,10 @@ valid_number         | variable   | L7          | C5         | L15:C14, L17:C12
 total_sum            | variable   | L7          | C12        | L12:C13, L12:C25, L16:C13, L16:C25, L18:C13, L18:C25, L27:C12
 valid_count          | variable   | L8          | C5         | L13:C13, L13:C27, L22:C11, L23:C9, L23:C23
 y                    | variable   | L8          | C5         | L11:C37, L15:C11, L16:C19
-state                | variable   | L8          | C5         | L20:C12
-math_op              | variable   | L9          | C5         | —
+state                | variable   | L8          | C5         | L21:C13, L25:C12
+math_op              | variable   | L9          | C5         | L20:C13
 environment          | variable   | L9          | C8         | —
-node_name            | variable   | L10         | C5         | —
+node_name            | variable   | L10         | C5         | L22:C13
 value                | variable   | L10         | C9         | L11:C12, L12:C37, L14:C16
 invalid_var          | variable   | L11         | C5         | —
 process_telemetry    | function   | L11         | C10        | L48:C1
@@ -31,7 +31,7 @@ bad_command          | variable   | L14         | C6         | —
 b                    | variable   | L14         | C7         | —
 c                    | variable   | L14         | C9         | —
 result               | variable   | L15         | C5         | —
-log_message          | variable   | L18         | C5         | —
+log_message          | variable   | L18         | C5         | L23:C13
 total                | variable   | L19         | C5         | L29:C13, L29:C21, L31:C13, L31:C21, L40:C21
 pointer              | variable   | L20         | C5         | —
 active_variable      | variable   | L24         | C5         | L25:C12
@@ -41,7 +41,7 @@ adjusted_val         | variable   | L28         | C13        | L29:C29
 my_data              | variable   | L30         | C1         | L33:C30
 my_dict              | variable   | L31         | C1         | —
 Dict                 | variable   | L31         | C11        | —
-println              | variable   | L33         | C1         | —
+println              | variable   | L33         | C1         | L20:C5, L21:C5, L22:C5, L23:C5
 status_code          | variable   | L36         | C5         | —
 complex_op           | variable   | L37         | C5         | —
 final_output         | variable   | L40         | C5         | —

@@ -1,98 +1,98 @@
-    Source: test/test_01_base_engine.jl
-    TOKEN TYPE           | VALUE                     | LINE   | COL
-    --------------------------------------------------------------
-    KEYWORD              | function                  | 6      | 1
-    IDENTIFIER           | calculate_statistics      | 6      | 10
-    PUNCTUATION          | (                         | 6      | 30
-    IDENTIFIER           | data_array                | 6      | 31
-    PUNCTUATION          | ,                         | 6      | 41
-    IDENTIFIER           | threshold                 | 6      | 43
-    PUNCTUATION          | )                         | 6      | 52
-    KEYWORD              | global                    | 7      | 5
-    IDENTIFIER           | total_sum                 | 7      | 12
-    OPERATOR             | =                         | 7      | 22
-    FLOAT                | 0.0                       | 7      | 24
-    IDENTIFIER           | valid_count               | 8      | 5
-    OPERATOR             | =                         | 8      | 17
-    INT                  | 0                         | 8      | 19
-    KEYWORD              | for                       | 10     | 5
-    IDENTIFIER           | value                     | 10     | 9
-    KEYWORD              | in                        | 10     | 15
-    IDENTIFIER           | data_array                | 10     | 18
-    KEYWORD              | if                        | 11     | 9
-    IDENTIFIER           | value                     | 11     | 12
-    OPERATOR             | >=                        | 11     | 18
-    IDENTIFIER           | threshold                 | 11     | 21
-    IDENTIFIER           | total_sum                 | 12     | 13
-    OPERATOR             | =                         | 12     | 23
-    IDENTIFIER           | total_sum                 | 12     | 25
-    OPERATOR             | +                         | 12     | 35
-    IDENTIFIER           | value                     | 12     | 37
-    IDENTIFIER           | valid_count               | 13     | 13
-    OPERATOR             | =                         | 13     | 25
-    IDENTIFIER           | valid_count               | 13     | 27
-    OPERATOR             | +                         | 13     | 39
-    INT                  | 1                         | 13     | 41
-    KEYWORD              | elseif                    | 14     | 9
-    IDENTIFIER           | value                     | 14     | 16
-    OPERATOR             | ==                        | 14     | 22
-    INT                  | 0                         | 14     | 25
-    IDENTIFIER           | total_sum                 | 16     | 13
-    OPERATOR             | =                         | 16     | 23
-    IDENTIFIER           | total_sum                 | 16     | 25
-    OPERATOR             | +                         | 16     | 35
-    INT                  | 0                         | 16     | 37
-    KEYWORD              | else                      | 17     | 9
-    IDENTIFIER           | total_sum                 | 18     | 13
-    OPERATOR             | =                         | 18     | 23
-    IDENTIFIER           | total_sum                 | 18     | 25
-    OPERATOR             | -                         | 18     | 35
-    FLOAT                | 1.5                       | 18     | 37
-    KEYWORD              | end                       | 19     | 9
-    KEYWORD              | end                       | 20     | 5
-    KEYWORD              | while                     | 22     | 5
-    IDENTIFIER           | valid_count               | 22     | 11
-    OPERATOR             | <                         | 22     | 23
-    INT                  | 10                        | 22     | 25
-    IDENTIFIER           | valid_count               | 23     | 9
-    OPERATOR             | =                         | 23     | 21
-    IDENTIFIER           | valid_count               | 23     | 23
-    OPERATOR             | +                         | 23     | 35
-    INT                  | 1                         | 23     | 37
-    KEYWORD              | end                       | 24     | 5
-    IDENTIFIER           | result_string             | 26     | 5
-    OPERATOR             | =                         | 26     | 19
-    STRING               | "Calculation finished"    | 26     | 21
-    KEYWORD              | return                    | 27     | 5
-    IDENTIFIER           | total_sum                 | 27     | 12
-    KEYWORD              | end                       | 28     | 1
-    IDENTIFIER           | my_data                   | 30     | 1
-    OPERATOR             | =                         | 30     | 9
-    PUNCTUATION          | [                         | 30     | 11
-    INT                  | 10                        | 30     | 12
-    PUNCTUATION          | ,                         | 30     | 14
-    FLOAT                | 20.5                      | 30     | 16
-    PUNCTUATION          | ,                         | 30     | 20
-    INT                  | 30                        | 30     | 22
-    PUNCTUATION          | ,                         | 30     | 24
-    INT                  | 0                         | 30     | 26
-    PUNCTUATION          | ,                         | 30     | 27
-    FLOAT                | 5.5                       | 30     | 29
-    PUNCTUATION          | ]                         | 30     | 32
-    IDENTIFIER           | my_dict                   | 31     | 1
-    OPERATOR             | =                         | 31     | 9
-    IDENTIFIER           | Dict                      | 31     | 11
-    PUNCTUATION          | (                         | 31     | 15
-    STRING               | "status"                  | 31     | 16
-    OPERATOR             | =>                        | 31     | 25
-    STRING               | "active"                  | 31     | 28
-    PUNCTUATION          | )                         | 31     | 36
-    IDENTIFIER           | println                   | 33     | 1
-    PUNCTUATION          | (                         | 33     | 8
-    IDENTIFIER           | calculate_statistics      | 33     | 9
-    PUNCTUATION          | (                         | 33     | 29
-    IDENTIFIER           | my_data                   | 33     | 30
-    PUNCTUATION          | ,                         | 33     | 37
-    INT                  | 10                        | 33     | 39
-    PUNCTUATION          | )                         | 33     | 41
-    PUNCTUATION          | )                         | 33     | 42
+Source: test/test_01_base_engine.jl
+TOKEN TYPE           | VALUE                     | LINE   | COL
+--------------------------------------------------------------
+KEYWORD              | function                  | 6      | 1
+IDENTIFIER           | calculate_statistics      | 6      | 10
+PUNCTUATION          | (                         | 6      | 30
+IDENTIFIER           | data_array                | 6      | 31
+PUNCTUATION          | ,                         | 6      | 41
+IDENTIFIER           | threshold                 | 6      | 43
+PUNCTUATION          | )                         | 6      | 52
+KEYWORD              | global                    | 7      | 5
+IDENTIFIER           | total_sum                 | 7      | 12
+OPERATOR             | =                         | 7      | 22
+FLOAT                | 0.0                       | 7      | 24
+IDENTIFIER           | valid_count               | 8      | 5
+OPERATOR             | =                         | 8      | 17
+INT                  | 0                         | 8      | 19
+KEYWORD              | for                       | 10     | 5
+IDENTIFIER           | value                     | 10     | 9
+KEYWORD              | in                        | 10     | 15
+IDENTIFIER           | data_array                | 10     | 18
+KEYWORD              | if                        | 11     | 9
+IDENTIFIER           | value                     | 11     | 12
+OPERATOR             | >=                        | 11     | 18
+IDENTIFIER           | threshold                 | 11     | 21
+IDENTIFIER           | total_sum                 | 12     | 13
+OPERATOR             | =                         | 12     | 23
+IDENTIFIER           | total_sum                 | 12     | 25
+OPERATOR             | +                         | 12     | 35
+IDENTIFIER           | value                     | 12     | 37
+IDENTIFIER           | valid_count               | 13     | 13
+OPERATOR             | =                         | 13     | 25
+IDENTIFIER           | valid_count               | 13     | 27
+OPERATOR             | +                         | 13     | 39
+INT                  | 1                         | 13     | 41
+KEYWORD              | elseif                    | 14     | 9
+IDENTIFIER           | value                     | 14     | 16
+OPERATOR             | ==                        | 14     | 22
+INT                  | 0                         | 14     | 25
+IDENTIFIER           | total_sum                 | 16     | 13
+OPERATOR             | =                         | 16     | 23
+IDENTIFIER           | total_sum                 | 16     | 25
+OPERATOR             | +                         | 16     | 35
+INT                  | 0                         | 16     | 37
+KEYWORD              | else                      | 17     | 9
+IDENTIFIER           | total_sum                 | 18     | 13
+OPERATOR             | =                         | 18     | 23
+IDENTIFIER           | total_sum                 | 18     | 25
+OPERATOR             | -                         | 18     | 35
+FLOAT                | 1.5                       | 18     | 37
+KEYWORD              | end                       | 19     | 9
+KEYWORD              | end                       | 20     | 5
+KEYWORD              | while                     | 22     | 5
+IDENTIFIER           | valid_count               | 22     | 11
+OPERATOR             | <                         | 22     | 23
+INT                  | 10                        | 22     | 25
+IDENTIFIER           | valid_count               | 23     | 9
+OPERATOR             | =                         | 23     | 21
+IDENTIFIER           | valid_count               | 23     | 23
+OPERATOR             | +                         | 23     | 35
+INT                  | 1                         | 23     | 37
+KEYWORD              | end                       | 24     | 5
+IDENTIFIER           | result_string             | 26     | 5
+OPERATOR             | =                         | 26     | 19
+STRING               | "Calculation finished"    | 26     | 21
+KEYWORD              | return                    | 27     | 5
+IDENTIFIER           | total_sum                 | 27     | 12
+KEYWORD              | end                       | 28     | 1
+IDENTIFIER           | my_data                   | 30     | 1
+OPERATOR             | =                         | 30     | 9
+PUNCTUATION          | [                         | 30     | 11
+INT                  | 10                        | 30     | 12
+PUNCTUATION          | ,                         | 30     | 14
+FLOAT                | 20.5                      | 30     | 16
+PUNCTUATION          | ,                         | 30     | 20
+INT                  | 30                        | 30     | 22
+PUNCTUATION          | ,                         | 30     | 24
+INT                  | 0                         | 30     | 26
+PUNCTUATION          | ,                         | 30     | 27
+FLOAT                | 5.5                       | 30     | 29
+PUNCTUATION          | ]                         | 30     | 32
+IDENTIFIER           | my_dict                   | 31     | 1
+OPERATOR             | =                         | 31     | 9
+IDENTIFIER           | Dict                      | 31     | 11
+PUNCTUATION          | (                         | 31     | 15
+STRING               | "status"                  | 31     | 16
+OPERATOR             | =>                        | 31     | 25
+STRING               | "active"                  | 31     | 28
+PUNCTUATION          | )                         | 31     | 36
+IDENTIFIER           | println                   | 33     | 1
+PUNCTUATION          | (                         | 33     | 8
+IDENTIFIER           | calculate_statistics      | 33     | 9
+PUNCTUATION          | (                         | 33     | 29
+IDENTIFIER           | my_data                   | 33     | 30
+PUNCTUATION          | ,                         | 33     | 37
+INT                  | 10                        | 33     | 39
+PUNCTUATION          | )                         | 33     | 41
+PUNCTUATION          | )                         | 33     | 42

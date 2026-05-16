@@ -16,6 +16,13 @@ function string_and_symbols()
     # Lexer should subdivide this into: 
     # STRING_START, INTERPOLATION_START, IDENTIFIER (user), STRING_TEXT, INTERPOLATION_START, IDENTIFIER (errors), STRING_END
     log_message = "User $user finished with $errors errors."
+
+    println(math_op)
+    println(state)
+    println(node_name)
+    println(log_message)
     
     return state
 end
+
+string_and_symbols()
