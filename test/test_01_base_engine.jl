@@ -28,4 +28,6 @@ function calculate_statistics(data_array, threshold)
 end
 
 my_data = [10, 20.5, 30, 0, 5.5]
-my_dict = {"status" : "active"}
+my_dict = Dict("status" => "active")
+
+println(calculate_statistics(my_data, 10))

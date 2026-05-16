@@ -2,7 +2,7 @@
 
 SYMBOL               | ROLE       | FIRST LINE  | FIRST COL  | REFERENCES
 -------------------------------------------------------------------------
-calculate_statistics | function   | L6          | C10        | —
+calculate_statistics | function   | L6          | C10        | L33:C9
 spacing_test         | function   | L6          | C10        | —
 string_and_symbols   | function   | L6          | C10        | —
 faulty_code_test     | function   | L6          | C10        | —
@@ -38,8 +38,10 @@ active_variable      | variable   | L24         | C5         | L25:C12
 result_string        | variable   | L26         | C5         | —
 val                  | variable   | L26         | C9         | L27:C12, L28:C28, L31:C29
 adjusted_val         | variable   | L28         | C13        | L29:C29
-my_data              | variable   | L30         | C1         | —
+my_data              | variable   | L30         | C1         | L33:C30
 my_dict              | variable   | L31         | C1         | —
+Dict                 | variable   | L31         | C11        | —
+println              | variable   | L33         | C1         | —
 status_code          | variable   | L36         | C5         | —
 complex_op           | variable   | L37         | C5         | —
 final_output         | variable   | L40         | C5         | —
