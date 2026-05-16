@@ -1,5 +1,5 @@
 import os
-from lexer import tokenize
+from src.lexer import tokenize
 
 def process_test_file(input_path, output_path):
     print(f"Processing: {input_path} -> {output_path}")
@@ -33,7 +33,7 @@ def main():
     file_mappings = [
         ("test/test1_basic.jl", "output/test1_tokens.txt"),
         ("test/test2_loop.jl", "output/test2_tokens.txt"),
-        ("test/test3_func.jl", "output/test3_func_tokens.txt") # Your directory had test3_func.jl
+        ("test/test3_func.jl", "output/test3_func_tokens.txt")
     ]
     
     print("=== STARTING JULIA LEXER PROCESSOR ===\n")

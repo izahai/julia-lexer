@@ -1,7 +1,6 @@
 import re
 
 # Define the token categories using regular expressions (Regex)
-# The order matters: Keywords must be checked BEFORE general identifiers!
 TOKEN_RULES = [
     # 1. Comments (To be ignored, but tracked)
     ('COMMENT',     r'#.*'),
@@ -31,7 +30,6 @@ TOKEN_RULES = [
 ]
 
 # Combine all rules into one massive regular expression master-pattern
-# Using named groups (?P<NAME>pattern) allows us to easily see which rule matched
 MASTER_REGEX = re.compile('|'.join(f'(?P<{name}>{pattern})' for name, pattern in TOKEN_RULES))
 
 def tokenize(code_text):
@@ -53,6 +51,9 @@ def tokenize(code_text):
             # Count newlines to keep track of line numbers for debugging
             if '\n' in value:
                 line_num += value.count('\n')
+                # FIX: Precise Column Tracking Math
+                # Track the exact index position of the absolute last newline character observed
+                line_start = match.start() + value.rfind('\n') + 1
         elif kind == 'COMMENT':
             # Skip comments entirely
             continue
