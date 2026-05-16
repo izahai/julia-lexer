@@ -23,7 +23,7 @@ TOKEN_RULES = [
     ('STRING',      r'"[^"\\]*(?:\\.[^"\\]*)*"'),
 
     # 5. Symbol literals  :identifier  or  :operator-combo
-    ('SYMBOL',      r':[a-zA-Z_][a-zA-Z0-9_]*|:(?:>=|<=|==|!=|\+|-|\*|/|>|<|=|\^|&|\|)'),
+    ('SYMBOL',      r':[a-zA-Z_][a-zA-Z0-9_]*|:(?:>=|<=|==|!=|\+=|-=|\*=|/=|\+|-|\*|/|>|<|=|\^|&|\|)'),
 
     # 6. Identifiers
     ('IDENTIFIER',  r'\b[a-zA-Z_\u00C0-\u024F][a-zA-Z0-9_\u00C0-\u024F!]*\b'),
