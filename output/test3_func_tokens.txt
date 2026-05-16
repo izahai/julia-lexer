@@ -1,0 +1,37 @@
+TOKEN TYPE      | VALUE                | LINE
+----------------------------------------------
+KEYWORD         | function             | Line 2
+IDENTIFIER      | calculate_sum        | Line 2
+PUNCTUATION     | (                    | Line 2
+IDENTIFIER      | limit                | Line 2
+PUNCTUATION     | )                    | Line 2
+IDENTIFIER      | total                | Line 3
+OPERATOR        | =                    | Line 3
+INT             | 0                    | Line 3
+KEYWORD         | for                  | Line 4
+IDENTIFIER      | i                    | Line 4
+KEYWORD         | in                   | Line 4
+INT             | 1                    | Line 4
+OPERATOR        | :                    | Line 4
+IDENTIFIER      | limit                | Line 4
+IDENTIFIER      | total                | Line 5
+OPERATOR        | =                    | Line 5
+IDENTIFIER      | total                | Line 5
+OPERATOR        | +                    | Line 5
+IDENTIFIER      | i                    | Line 5
+KEYWORD         | end                  | Line 6
+KEYWORD         | return               | Line 7
+IDENTIFIER      | total                | Line 7
+KEYWORD         | end                  | Line 8
+IDENTIFIER      | final_score          | Line 11
+OPERATOR        | =                    | Line 11
+IDENTIFIER      | calculate_sum        | Line 11
+PUNCTUATION     | (                    | Line 11
+INT             | 10                   | Line 11
+PUNCTUATION     | )                    | Line 11
+IDENTIFIER      | println              | Line 12
+PUNCTUATION     | (                    | Line 12
+STRING          | "The sum from 1 to 10 is: " | Line 12
+PUNCTUATION     | ,                    | Line 12
+IDENTIFIER      | final_score          | Line 12
+PUNCTUATION     | )                    | Line 12

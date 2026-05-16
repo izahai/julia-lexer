@@ -1,0 +1,26 @@
+TOKEN TYPE      | VALUE                | LINE
+----------------------------------------------
+IDENTIFIER      | x                    | Line 2
+OPERATOR        | =                    | Line 2
+INT             | 42                   | Line 2
+IDENTIFIER      | y                    | Line 3
+OPERATOR        | =                    | Line 3
+FLOAT           | 3.14                 | Line 3
+IDENTIFIER      | greeting             | Line 4
+OPERATOR        | =                    | Line 4
+STRING          | "Hello, Julia!"      | Line 4
+IDENTIFIER      | result               | Line 6
+OPERATOR        | =                    | Line 6
+IDENTIFIER      | x                    | Line 6
+OPERATOR        | *                    | Line 6
+IDENTIFIER      | y                    | Line 6
+IDENTIFIER      | println              | Line 9
+PUNCTUATION     | (                    | Line 9
+IDENTIFIER      | greeting             | Line 9
+PUNCTUATION     | )                    | Line 9
+IDENTIFIER      | println              | Line 10
+PUNCTUATION     | (                    | Line 10
+STRING          | "The result of x * y is: " | Line 10
+PUNCTUATION     | ,                    | Line 10
+IDENTIFIER      | result               | Line 10
+PUNCTUATION     | )                    | Line 10
