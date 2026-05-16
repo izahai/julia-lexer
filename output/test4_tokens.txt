@@ -1,0 +1,37 @@
+Source: test/test_04_symbols_and_interpolation.jl
+TOKEN TYPE           | VALUE                     | LINE   | COL
+--------------------------------------------------------------
+KEYWORD              | function                  | 6      | 1
+IDENTIFIER           | string_and_symbols        | 6      | 10
+PUNCTUATION          | (                         | 6      | 28
+PUNCTUATION          | )                         | 6      | 29
+IDENTIFIER           | state                     | 8      | 5
+OPERATOR             | =                         | 8      | 11
+SYMBOL               | :initializing             | 8      | 13
+IDENTIFIER           | math_op                   | 9      | 5
+OPERATOR             | =                         | 9      | 13
+SYMBOL               | :+                        | 9      | 15
+OPERATOR             | =                         | 9      | 17
+IDENTIFIER           | node_name                 | 10     | 5
+OPERATOR             | =                         | 10     | 15
+SYMBOL               | :ast_node_1               | 10     | 17
+IDENTIFIER           | user                      | 13     | 5
+OPERATOR             | =                         | 13     | 10
+STRING               | "Compiler_Dev"            | 13     | 12
+IDENTIFIER           | errors                    | 14     | 5
+OPERATOR             | =                         | 14     | 12
+INT                  | 0                         | 14     | 14
+IDENTIFIER           | log_message               | 18     | 5
+OPERATOR             | =                         | 18     | 17
+STRING_START         | "                         | 18     | 19
+STRING_PART          | "User "                   | 18     | 19
+INTERP_START         | $                         | 18     | 19
+INTERP_IDENT         | user                      | 18     | 19
+STRING_PART          | " finished with "         | 18     | 19
+INTERP_START         | $                         | 18     | 19
+INTERP_IDENT         | errors                    | 18     | 19
+STRING_PART          | " errors."                | 18     | 19
+STRING_END           | "                         | 18     | 19
+KEYWORD              | return                    | 20     | 5
+IDENTIFIER           | state                     | 20     | 12
+KEYWORD              | end                       | 21     | 1

@@ -1,0 +1,27 @@
+Source: test/test_05_error_recovery.jl
+TOKEN TYPE           | VALUE                     | LINE   | COL
+--------------------------------------------------------------
+KEYWORD              | function                  | 6      | 1
+IDENTIFIER           | faulty_code_test          | 6      | 10
+PUNCTUATION          | (                         | 6      | 26
+PUNCTUATION          | )                         | 6      | 27
+IDENTIFIER           | valid_number              | 7      | 5
+OPERATOR             | =                         | 7      | 18
+INT                  | 100                       | 7      | 20
+IDENTIFIER           | invalid_var               | 11     | 5
+ERROR                | @                         | 11     | 16
+OPERATOR             | =                         | 11     | 18
+INT                  | 200                       | 11     | 20
+ERROR                | `                         | 14     | 5
+IDENTIFIER           | bad_command               | 14     | 6
+ERROR                | `                         | 14     | 17
+OPERATOR             | =                         | 14     | 19
+INT                  | 50                        | 14     | 21
+IDENTIFIER           | result                    | 15     | 5
+OPERATOR             | =                         | 15     | 12
+IDENTIFIER           | valid_number              | 15     | 14
+ERROR                | ?                         | 15     | 27
+INT                  | 5                         | 15     | 29
+KEYWORD              | return                    | 17     | 5
+IDENTIFIER           | valid_number              | 17     | 12
+KEYWORD              | end                       | 18     | 1

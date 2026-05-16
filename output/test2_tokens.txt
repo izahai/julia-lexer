@@ -1,50 +1,37 @@
-TOKEN TYPE      | VALUE                | LINE
-----------------------------------------------
-IDENTIFIER      | score                | Line 2
-OPERATOR        | =                    | Line 2
-INT             | 85                   | Line 2
-KEYWORD         | if                   | Line 4
-IDENTIFIER      | score                | Line 4
-OPERATOR        | >=                   | Line 4
-INT             | 90                   | Line 4
-IDENTIFIER      | status               | Line 5
-OPERATOR        | =                    | Line 5
-STRING          | "Excellent"          | Line 5
-KEYWORD         | elseif               | Line 6
-IDENTIFIER      | score                | Line 6
-OPERATOR        | >=                   | Line 6
-INT             | 75                   | Line 6
-IDENTIFIER      | status               | Line 7
-OPERATOR        | =                    | Line 7
-STRING          | "Pass"               | Line 7
-KEYWORD         | else                 | Line 8
-IDENTIFIER      | status               | Line 9
-OPERATOR        | =                    | Line 9
-STRING          | "Fail"               | Line 9
-KEYWORD         | end                  | Line 10
-IDENTIFIER      | println              | Line 12
-PUNCTUATION     | (                    | Line 12
-STRING          | "Student Status: "   | Line 12
-PUNCTUATION     | ,                    | Line 12
-IDENTIFIER      | status               | Line 12
-PUNCTUATION     | )                    | Line 12
-IDENTIFIER      | count                | Line 15
-OPERATOR        | =                    | Line 15
-INT             | 3                    | Line 15
-KEYWORD         | while                | Line 16
-IDENTIFIER      | count                | Line 16
-OPERATOR        | >                    | Line 16
-INT             | 0                    | Line 16
-IDENTIFIER      | println              | Line 17
-PUNCTUATION     | (                    | Line 17
-STRING          | "Countdown: "        | Line 17
-PUNCTUATION     | ,                    | Line 17
-IDENTIFIER      | count                | Line 17
-PUNCTUATION     | )                    | Line 17
-KEYWORD         | global               | Line 18
-IDENTIFIER      | count                | Line 18
-OPERATOR        | =                    | Line 18
-IDENTIFIER      | count                | Line 18
-OPERATOR        | -                    | Line 18
-INT             | 1                    | Line 18
-KEYWORD         | end                  | Line 19
+Source: test/test_02_whitespace_and_columns.jl
+TOKEN TYPE           | VALUE                     | LINE   | COL
+--------------------------------------------------------------
+KEYWORD              | function                  | 6      | 1
+IDENTIFIER           | spacing_test              | 6      | 10
+PUNCTUATION          | (                         | 6      | 22
+PUNCTUATION          | )                         | 6      | 23
+IDENTIFIER           | x                         | 7      | 5
+OPERATOR             | =                         | 7      | 6
+INT                  | 10                        | 7      | 7
+IDENTIFIER           | y                         | 8      | 5
+OPERATOR             | =                         | 8      | 9
+INT                  | 20                        | 8      | 13
+IDENTIFIER           | z                         | 11     | 29
+OPERATOR             | =                         | 11     | 31
+IDENTIFIER           | x                         | 11     | 33
+OPERATOR             | +                         | 11     | 35
+IDENTIFIER           | y                         | 11     | 37
+IDENTIFIER           | a                         | 14     | 5
+OPERATOR             | =                         | 14     | 6
+IDENTIFIER           | b                         | 14     | 7
+OPERATOR             | +                         | 14     | 8
+IDENTIFIER           | c                         | 14     | 9
+KEYWORD              | if                        | 15     | 5
+IDENTIFIER           | x                         | 15     | 8
+OPERATOR             | >=                        | 15     | 9
+IDENTIFIER           | y                         | 15     | 11
+KEYWORD              | return                    | 16     | 9
+IDENTIFIER           | x                         | 16     | 16
+OPERATOR             | ==                        | 16     | 17
+IDENTIFIER           | y                         | 16     | 19
+OPERATOR             | !=                        | 16     | 20
+IDENTIFIER           | z                         | 16     | 22
+KEYWORD              | end                       | 17     | 5
+KEYWORD              | return                    | 19     | 5
+IDENTIFIER           | z                         | 19     | 12
+KEYWORD              | end                       | 20     | 1

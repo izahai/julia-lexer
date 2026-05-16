@@ -1,0 +1,5 @@
+=== 4 LEXER ERROR(S) DETECTED ===
+  [ERROR] Illegal character '@' at line 11, column 16
+  [ERROR] Illegal character '`' at line 14, column 5
+  [ERROR] Illegal character '`' at line 14, column 17
+  [ERROR] Illegal character '?' at line 15, column 27
