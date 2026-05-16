@@ -57,12 +57,15 @@ _GROUP_MAP = {f'{name}_{i}': name for i, (name, _) in enumerate(TOKEN_RULES)}
 # String interpolation subdivision
 # ---------------------------------------------------------------------------
 
-def _subdivide_string(raw_value, line_num):
-    """Break a raw Julia string token into sub-tokens for $-interpolation."""
+def _subdivide_string(raw_value, line_num, start_col):
+    """Break a raw Julia string token into sub-tokens for $-interpolation, calculating real columns."""
     segments = []
     i = 1  # skip opening "
     end = len(raw_value) - 1  # skip closing "
     buf = []
+    
+    # Track where our current sub-token snippet starts relative to the line
+    current_token_col = start_col
 
     while i < end:
         ch = raw_value[i]
@@ -70,13 +73,19 @@ def _subdivide_string(raw_value, line_num):
             buf.append(raw_value[i:i+2])
             i += 2
         elif ch == '$' and i + 1 < end:
-            # flush literal so far
+            # Flush literal text built up so far
             if buf:
-                segments.append(('STRING_PART', '"' + ''.join(buf) + '"', line_num))
+                segments.append(('STRING_PART', '"' + ''.join(buf) + '"', line_num, current_token_col))
+                # Advance tracking column by the actual characters consumed
+                current_token_col += len(buf)
                 buf = []
-            segments.append(('INTERP_START', '$', line_num))
+            
+            # Interpolation structural start token ($)
+            segments.append(('INTERP_START', '$', line_num, current_token_col))
+            interp_start_idx = i  # Checkpoint to calculate total consumed length later
             i += 1
-            # grab identifier or parenthesised expression
+            
+            # Grab parenthesized expression
             if i < end and raw_value[i] == '(':
                 depth = 1
                 i += 1
@@ -89,25 +98,36 @@ def _subdivide_string(raw_value, line_num):
                     if depth:
                         expr.append(raw_value[i])
                     i += 1
-                segments.append(('INTERP_EXPR', ''.join(expr), line_num))
+                
+                # Dynamic column update for the expression segment (+1 to skip the '$')
+                expr_col = current_token_col + 1
+                segments.append(('INTERP_EXPR', ''.join(expr), line_num, expr_col))
+                current_token_col += (i - interp_start_idx)
             else:
+                # Grab standard identifier
                 m = re.match(r'[a-zA-Z_][a-zA-Z0-9_]*', raw_value[i:])
                 if m:
-                    segments.append(('INTERP_IDENT', m.group(), line_num))
+                    ident_col = current_token_col + 1  # +1 to skip the '$'
+                    segments.append(('INTERP_IDENT', m.group(), line_num, ident_col))
                     i += len(m.group())
+                    current_token_col += (i - interp_start_idx)
         else:
             buf.append(ch)
             i += 1
 
     if buf:
-        segments.append(('STRING_PART', '"' + ''.join(buf) + '"', line_num))
+        segments.append(('STRING_PART', '"' + ''.join(buf) + '"', line_num, current_token_col))
+        current_token_col += len(buf)
 
-    # If no interpolation found, return as plain STRING
+    # If no interpolation tokens were produced, keep it as a clean unified STRING literal
     if not any(t[0].startswith('INTERP') for t in segments):
-        return [('STRING', raw_value, line_num)]
+        return [('STRING', raw_value, line_num, start_col)]
 
-    # Wrap with STRING_START / STRING_END
-    return [('STRING_START', '"', line_num)] + segments + [('STRING_END', '"', line_num)]
+    # Calculate exact ending column for the closing quote
+    end_quote_col = start_col + len(raw_value) - 1
+    return ([('STRING_START', '"', line_num, start_col)] + 
+            segments + 
+            [('STRING_END', '"', line_num, end_quote_col)])
 
 
 # ---------------------------------------------------------------------------
@@ -193,9 +213,10 @@ def tokenize(code_text):
             continue
 
         if kind == 'STRING':
-            sub = _subdivide_string(value, line_num)
-            for st, sv, sl in sub:
-                tokens.append((st, sv, sl, col))
+            # Pass 'col' down to track subdivision offsets
+            sub = _subdivide_string(value, line_num, col)
+            for st, sv, sl, sc in sub:
+                tokens.append((st, sv, sl, sc))
             continue
 
         tokens.append((kind, value, line_num, col))

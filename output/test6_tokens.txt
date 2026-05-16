@@ -19,10 +19,10 @@ INT                  | 0                         | 13     | 23
 KEYWORD              | return                    | 14     | 9
 STRING_START         | "                         | 14     | 16
 STRING_PART          | "Error: "                 | 14     | 16
-INTERP_START         | $                         | 14     | 16
-INTERP_IDENT         | data_stream               | 14     | 16
-STRING_PART          | " is empty"               | 14     | 16
-STRING_END           | "                         | 14     | 16
+INTERP_START         | $                         | 14     | 23
+INTERP_IDENT         | data_stream               | 14     | 24
+STRING_PART          | " is empty"               | 14     | 35
+STRING_END           | "                         | 14     | 45
 KEYWORD              | end                       | 15     | 5
 IDENTIFIER           | total                     | 19     | 5
 OPERATOR             | =                         | 19     | 11
@@ -61,8 +61,7 @@ OPERATOR             | =                         | 36     | 17
 SYMBOL               | :success                  | 36     | 19
 IDENTIFIER           | complex_op                | 37     | 5
 OPERATOR             | =                         | 37     | 16
-SYMBOL               | :*                        | 37     | 18
-OPERATOR             | =                         | 37     | 20
+SYMBOL               | :*=                       | 37     | 18
 IDENTIFIER           | final_output              | 40     | 5
 OPERATOR             | ^                         | 40     | 17
 OPERATOR             | =                         | 40     | 19
@@ -71,13 +70,13 @@ IDENTIFIER           | report                    | 42     | 5
 OPERATOR             | =                         | 42     | 12
 STRING_START         | "                         | 42     | 14
 STRING_PART          | "Telemetry processed. Status: " | 42     | 14
-INTERP_START         | $                         | 42     | 14
-INTERP_IDENT         | status_code               | 42     | 14
-STRING_PART          | ". Final sum: "           | 42     | 14
-INTERP_START         | $                         | 42     | 14
-INTERP_IDENT         | total                     | 42     | 14
-STRING_PART          | "."                       | 42     | 14
-STRING_END           | "                         | 42     | 14
+INTERP_START         | $                         | 42     | 43
+INTERP_IDENT         | status_code               | 42     | 44
+STRING_PART          | ". Final sum: "           | 42     | 55
+INTERP_START         | $                         | 42     | 68
+INTERP_IDENT         | total                     | 42     | 69
+STRING_PART          | "."                       | 42     | 74
+STRING_END           | "                         | 42     | 76
 KEYWORD              | return                    | 43     | 5
 IDENTIFIER           | report                    | 43     | 12
 KEYWORD              | end                       | 44     | 1

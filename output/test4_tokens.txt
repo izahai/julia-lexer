@@ -10,8 +10,7 @@ OPERATOR             | =                         | 8      | 11
 SYMBOL               | :initializing             | 8      | 13
 IDENTIFIER           | math_op                   | 9      | 5
 OPERATOR             | =                         | 9      | 13
-SYMBOL               | :+                        | 9      | 15
-OPERATOR             | =                         | 9      | 17
+SYMBOL               | :+=                       | 9      | 15
 IDENTIFIER           | node_name                 | 10     | 5
 OPERATOR             | =                         | 10     | 15
 SYMBOL               | :ast_node_1               | 10     | 17
@@ -25,13 +24,13 @@ IDENTIFIER           | log_message               | 18     | 5
 OPERATOR             | =                         | 18     | 17
 STRING_START         | "                         | 18     | 19
 STRING_PART          | "User "                   | 18     | 19
-INTERP_START         | $                         | 18     | 19
-INTERP_IDENT         | user                      | 18     | 19
-STRING_PART          | " finished with "         | 18     | 19
-INTERP_START         | $                         | 18     | 19
-INTERP_IDENT         | errors                    | 18     | 19
-STRING_PART          | " errors."                | 18     | 19
-STRING_END           | "                         | 18     | 19
+INTERP_START         | $                         | 18     | 24
+INTERP_IDENT         | user                      | 18     | 25
+STRING_PART          | " finished with "         | 18     | 29
+INTERP_START         | $                         | 18     | 44
+INTERP_IDENT         | errors                    | 18     | 45
+STRING_PART          | " errors."                | 18     | 51
+STRING_END           | "                         | 18     | 60
 IDENTIFIER           | println                   | 20     | 5
 PUNCTUATION          | (                         | 20     | 12
 IDENTIFIER           | math_op                   | 20     | 13
