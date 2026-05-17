@@ -44,7 +44,7 @@ Arithmetic and comparison operators including:
 
 ---
 
-## Advanced Capabilities
+## Capabilities
 - **Nested Block Comment Parsing**  
   Supports arbitrarily deep nested Julia block comments using state-based tracking.
 
