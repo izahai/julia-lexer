@@ -1,33 +1,20 @@
-# Julia Lexical Analyzer (Lexer)
-
-A lightweight lexical analyzer for the Julia programming language built in Python. This project was developed for the *Principles of Programming Languages* course.
-
-## Group Information
-* **Language Assigned:** Julia
-* **Group Members:** 
-
 ## Repository Structure
-* `main.py`: The main driver script that coordinates reading, tokenizing, and exporting.
-* `lexer.py`: The tokenization engine utilizing regular expressions (`re` module) mapped to Julia grammar.
-* `test/`: Folder containing valid Julia scripts (`.jl`) used to evaluate the lexer.
-* `output/`: Folder containing the resulting token sheets (`_tokens.txt`).
+* `main.py`: Refactored CLI driver script using `argparse` to support flexible `--input`, `--output`, and `--verbose` configurations.
+* `src/lexer.py`: The core tokenization engine utilizing a Master Regular Expression Architecture paired with custom state machines for complex contexts.
+* `src/symbol_table.py`: Dedicated tracking system that maps, registers, and scopes identifiers and their metadata across execution.
+* `test/`: Folder containing regression suite files (`.jl`) utilized for "Golden Master" differential testing.
+* `output/`: Folder containing generated token tables (`_tokens.txt`) and structural maps (`symbol_table.txt`).
 
-## Supported Tokens
-The lexer categorizes Julia components into the following token types:
-* **KEYWORDS:** `function`, `end`, `if`, `elseif`, `else`, `while`, `for`, `in`, `return`, `global`
-* **LITERALS:** Integers, Floats, and Strings
-* **IDENTIFIERS:** Variable and function names
-* **OPERATORS:** Arithmetic and comparison symbols (`+`, `-`, `*`, `/`, `=`, `==`, `>=`, `<=`, etc.)
-* **PUNCTUATION:** Parentheses, brackets, and commas `() [] {} ,`
-
-*Note: Code comments (`# ...`) and whitespace are automatically handled and skipped.*
+## Advanced Capabilities (Newly Added)
+* **Nested Block Comments:** State-tracking parser layer that accurately counts and bypasses arbitrarily deep nested `#= ... =#` blocks.
+* **Julia Symbol Literals:** Disambiguates `:` range/operators to cleanly extract symbol identifiers (e.g., `:initializing`, `:+=`).
+* **String Interpolation State-Machine:** Dynamically slices string literals into sub-tokens (`STRING_START`, `INTERP_START`, `INTERP_IDENT`, `STRING_END`) upon encountering `$`.
+* **Integrated Symbol Table:** Tracks, aggregates, and exports all identifiers to a decoupled cross-referenced database (`output/symbol_table.txt`) for later downstream phases.
+* **Panic-Mode Error Recovery:** Replaced crashing runtime halts with resilient continuous scanning; captures multiple isolated `ERROR` tokens per pass without interrupting source analysis.
 
 ## How to Run
 
 1. Open your terminal in the root directory (`julia-lexer/`).
-2. Execute the controller script using Python 3:
+2. Run the refactored CLI with optional flags:
    ```bash
-   python3 main.py
-   ```
-3. Check the (`output/`) directory to view the generated token tables.
----
+   python3 main.py --input test/test_04_symbols_and_interpolation.jl --verbose
