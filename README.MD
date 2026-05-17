@@ -8,6 +8,7 @@ A lightweight lexical analyzer for the Julia programming language built in Pytho
 - `main.py` — Refactored CLI driver script using `argparse` with configurable `--input`, `--output`, and `--verbose` options.
 - `src/lexer.py` — Core tokenization engine built on a Master Regular Expression Architecture with supplementary state machines for complex lexical contexts.
 - `src/symbol_table.py` — Symbol table manager for tracking identifiers, metadata, and scoped references.
+- `src/errors.py` — Structured lexer error handling and reporting system with aggregated diagnostics and file export support.
 - `test/` — Collection of Julia test programs (`.jl`) used for regression and Golden Master testing.
 - `output/` — Generated token reports (`_tokens.txt`) and symbol table exports (`symbol_table.txt`).
 
