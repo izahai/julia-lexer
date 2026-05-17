@@ -1,20 +1,87 @@
-## Repository Structure
-* `main.py`: Refactored CLI driver script using `argparse` to support flexible `--input`, `--output`, and `--verbose` configurations.
-* `src/lexer.py`: The core tokenization engine utilizing a Master Regular Expression Architecture paired with custom state machines for complex contexts.
-* `src/symbol_table.py`: Dedicated tracking system that maps, registers, and scopes identifiers and their metadata across execution.
-* `test/`: Folder containing regression suite files (`.jl`) utilized for "Golden Master" differential testing.
-* `output/`: Folder containing generated token tables (`_tokens.txt`) and structural maps (`symbol_table.txt`).
+# Julia Lexical Analyzer (Lexer)
 
-## Advanced Capabilities (Newly Added)
-* **Nested Block Comments:** State-tracking parser layer that accurately counts and bypasses arbitrarily deep nested `#= ... =#` blocks.
-* **Julia Symbol Literals:** Disambiguates `:` range/operators to cleanly extract symbol identifiers (e.g., `:initializing`, `:+=`).
-* **String Interpolation State-Machine:** Dynamically slices string literals into sub-tokens (`STRING_START`, `INTERP_START`, `INTERP_IDENT`, `STRING_END`) upon encountering `$`.
-* **Integrated Symbol Table:** Tracks, aggregates, and exports all identifiers to a decoupled cross-referenced database (`output/symbol_table.txt`) for later downstream phases.
-* **Panic-Mode Error Recovery:** Replaced crashing runtime halts with resilient continuous scanning; captures multiple isolated `ERROR` tokens per pass without interrupting source analysis.
+A lightweight lexical analyzer for the Julia programming language built in Python. This project was developed for the *Principles of Programming Languages* course.
+
+## Group Information
+- **Language Assigned:** Julia
+- **Group Members:** 
+
+---
+
+## Repository Structure
+- `main.py` — Refactored CLI driver script using `argparse` with configurable `--input`, `--output`, and `--verbose` options.
+- `src/lexer.py` — Core tokenization engine built on a Master Regular Expression Architecture with supplementary state machines for complex lexical contexts.
+- `src/symbol_table.py` — Symbol table manager for tracking identifiers, metadata, and scoped references.
+- `test/` — Collection of Julia test programs (`.jl`) used for regression and Golden Master testing.
+- `output/` — Generated token reports (`_tokens.txt`) and symbol table exports (`symbol_table.txt`).
+
+---
+
+## Supported Tokens
+The lexer recognizes and categorizes the following Julia language components:
+
+### Keywords
+`function`, `end`, `if`, `elseif`, `else`, `while`, `for`, `in`, `return`, `global`
+
+### Literals
+- Integers
+- Floating-point numbers
+- Strings
+- Julia Symbol Literals (e.g. `:init`, `:+=`)
+
+### Identifiers
+- Variable names
+- Function names
+
+### Operators
+Arithmetic and comparison operators including:
+`+`, `-`, `*`, `/`, `=`, `==`, `>=`, `<=`, `:`, and others.
+
+### Punctuation
+`() [] {} ,`
+
+### Ignored Elements
+- Whitespace
+- Single-line comments (`# ...`)
+- Nested block comments (`#= ... =#`)
+
+---
+
+## Advanced Capabilities
+- **Nested Block Comment Parsing**  
+  Supports arbitrarily deep nested Julia block comments using state-based tracking.
+
+- **String Interpolation Handling**  
+  Detects and tokenizes interpolated strings into structured sub-tokens such as:
+  `STRING_START`, `INTERP_START`, `INTERP_IDENT`, and `STRING_END`.
+
+- **Integrated Symbol Table**  
+  Tracks identifiers and exports cross-referenced symbol metadata to:
+  `output/symbol_table.txt`.
+
+- **Panic-Mode Error Recovery**  
+  Continues lexical analysis after malformed input by emitting isolated `ERROR` tokens instead of terminating execution.
+
+- **Flexible CLI Execution**  
+  Provides configurable input/output handling and optional verbose token tracing.
+
+---
 
 ## How to Run
 
-1. Open your terminal in the root directory (`julia-lexer/`).
-2. Run the refactored CLI with optional flags:
+1. Open a terminal in the project root directory:
+   ```bash
+   cd julia-lexer
+   ```
+2. Run the lexer:
+   ```bash
+   python3 main.py
+   ```
+3. Run with custom options:
    ```bash
    python3 main.py --input test/test_04_symbols_and_interpolation.jl --verbose
+   ```
+4. View generated outputs in:
+   - output/*_tokens.txt
+   - output/symbol_table.txt
+   - output/lexer_errors.txt (if any)
