@@ -2,10 +2,6 @@
 
 A lightweight lexical analyzer for the Julia programming language built in Python. This project was developed for the *Principles of Programming Languages* course.
 
-## Group Information
-- **Language Assigned:** Julia
-- **Group Members:** 
-
 ---
 
 ## Repository Structure
